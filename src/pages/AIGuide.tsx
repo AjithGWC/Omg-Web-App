@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowLeft, 
-  Send, 
-  Mic, 
+import {
+  ArrowLeft,
+  Send,
+  Mic,
   Sparkles,
   Bot,
   User,
@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 interface Message {
   id: number;
@@ -77,27 +77,27 @@ const AIGuide = () => {
 
   const generateResponse = (query: string): string => {
     const lowerQuery = query.toLowerCase();
-    
+
     if (lowerQuery.includes("rudraksha")) {
       return "📿 **Rudraksha Benefits:**\n\nRudraksha beads are sacred seeds from the Elaeocarpus ganitrus tree, believed to be the tears of Lord Shiva.\n\n**Key Benefits:**\n• 1 Mukhi: Spiritual enlightenment, liberation\n• 5 Mukhi: Peace, health, academics\n• 7 Mukhi: Wealth, prosperity\n• 14 Mukhi: Third eye activation\n\nWould you like to know more about a specific Mukhi Rudraksha?";
     }
-    
+
     if (lowerQuery.includes("pooja") || lowerQuery.includes("puja")) {
       return "🪔 **Today's Recommended Pooja:**\n\nBased on the current day and tithi, I recommend:\n\n• **Ganesh Vandana** - Start your day by removing obstacles\n• **Surya Namaskar** - 12 salutations to the Sun God\n• **Evening Aarti** - Connect with the divine at dusk\n\nWould you like step-by-step guidance for any of these?";
     }
-    
+
     if (lowerQuery.includes("om")) {
       return "🕉️ **The Sacred Om:**\n\nOm (ॐ) is the primordial sound of the universe, representing the essence of ultimate reality (Brahman).\n\n**Three Sounds of Om:**\n• **A** - Creation (Brahma)\n• **U** - Preservation (Vishnu)\n• **M** - Destruction (Shiva)\n\nThe silence after Om represents the infinite, formless Brahman. Chanting Om aligns your vibration with the universe.\n\n🎵 Shall I guide you through Om meditation?";
     }
-    
+
     if (lowerQuery.includes("shiva")) {
       return "🔱 **Lord Shiva - The Auspicious One:**\n\nShiva is the Supreme Being in Shaivism, part of the Hindu Trinity as the Destroyer and Transformer.\n\n**Sacred Forms:**\n• Nataraja - Cosmic Dancer\n• Ardhanarishvara - Half male, half female\n• Dakshinamurthy - The Supreme Teacher\n• Lingam - Symbol of creation\n\n**Maha Mantra:** Om Namah Shivaya\n\nMonday is the most auspicious day for Shiva worship. Would you like to learn a Shiva stotram?";
     }
-    
+
     if (lowerQuery.includes("meditation")) {
       return "🧘 **Meditation Guide:**\n\n**Simple Steps to Begin:**\n\n1. **Prepare** - Find a quiet space, sit comfortably\n2. **Breathe** - Take 3 deep breaths\n3. **Focus** - Concentrate on your breath or a mantra\n4. **Observe** - Let thoughts pass without judgment\n5. **Return** - Gently bring focus back when distracted\n\n**Recommended Duration:**\n• Beginners: 5-10 minutes\n• Intermediate: 15-20 minutes\n• Advanced: 30+ minutes\n\n🕉️ Would you like a guided mantra meditation?";
     }
-    
+
     return "🙏 Thank you for your question! As your AI Spiritual Guide, I'm here to help with Hindu spirituality, scriptures, rituals, and divine wisdom.\n\nYou can ask me about:\n• Mantras and their meanings\n• Pooja procedures\n• Festival significance\n• Deity stories\n• Meditation techniques\n\nPlease feel free to ask anything specific!";
   };
 
@@ -113,7 +113,7 @@ const AIGuide = () => {
               </Button>
             </Link>
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <img src={omSymbol} alt="OM" className="h-6 w-6 filter brightness-200" />
+              <img src={omSymbol} alt="OM" className="h-8 w-8 filter brightness-200" />
             </div>
             <div>
               <h1 className="font-bold text-gradient-divine">AI Spiritual Guide</h1>
@@ -157,26 +157,23 @@ const AIGuide = () => {
                 className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div className={`flex gap-3 max-w-[85%] ${message.type === "user" ? "flex-row-reverse" : ""}`}>
-                  <div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center ${
-                    message.type === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-gradient-to-br from-primary to-secondary"
-                  }`}>
+                  <div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center ${message.type === "user"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-gradient-to-br from-primary to-secondary"
+                    }`}>
                     {message.type === "user" ? (
                       <User className="w-4 h-4" />
                     ) : (
                       <Bot className="w-4 h-4 text-primary-foreground" />
                     )}
                   </div>
-                  <Card className={`p-4 ${
-                    message.type === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-card"
-                  }`}>
-                    <p className="text-sm whitespace-pre-line">{message.content}</p>
-                    <p className={`text-xs mt-2 ${
-                      message.type === "user" ? "text-primary-foreground/70" : "text-muted-foreground"
+                  <Card className={`p-4 ${message.type === "user"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card"
                     }`}>
+                    <p className="text-sm whitespace-pre-line">{message.content}</p>
+                    <p className={`text-xs mt-2 ${message.type === "user" ? "text-primary-foreground/70" : "text-muted-foreground"
+                      }`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </Card>

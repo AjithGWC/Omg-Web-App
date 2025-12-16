@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowLeft, 
-  BookOpen, 
-  Search, 
-  Star, 
-  Clock, 
+import {
+  ArrowLeft,
+  BookOpen,
+  Search,
+  Star,
+  Clock,
   Play,
   ChevronRight,
   Bookmark,
@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const categories = [
   { id: "all", name: "All", icon: "🕉️" },
@@ -108,7 +108,7 @@ const SacredKnowledge = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <img src={omSymbol} alt="OM" className="h-8 w-8" />
+              <img src={omSymbol} alt="OM" className="h-10 w-10" />
               <h1 className="text-xl font-bold text-gradient-divine">Sacred Knowledge</h1>
             </div>
             <Button variant="ghost" size="icon">
@@ -178,11 +178,10 @@ const SacredKnowledge = () => {
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category.id)}
-                className={`shrink-0 ${
-                  selectedCategory === category.id
-                    ? "bg-gradient-to-r from-primary to-secondary border-0"
-                    : ""
-                }`}
+                className={`shrink-0 ${selectedCategory === category.id
+                  ? "bg-gradient-to-r from-primary to-secondary border-0"
+                  : ""
+                  }`}
               >
                 <span className="mr-1">{category.icon}</span>
                 {category.name}

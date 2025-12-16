@@ -19,7 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "@/hooks/use-toast";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const Checkout = () => {
   const { items, totalPrice, clearCart } = useCart();
@@ -115,7 +115,7 @@ const Checkout = () => {
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <img src={omSymbol} alt="OM" className="h-8 w-8" />
+          <img src={omSymbol} alt="OM" className="h-10 w-10" />
           <h1 className="text-xl font-bold">Checkout</h1>
         </div>
       </header>
@@ -129,9 +129,8 @@ const Checkout = () => {
                 animate={{
                   backgroundColor: step >= s ? "hsl(var(--primary))" : "hsl(var(--muted))",
                 }}
-                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
-                  step >= s ? "text-primary-foreground" : "text-muted-foreground"
-                }`}
+                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${step >= s ? "text-primary-foreground" : "text-muted-foreground"
+                  }`}
               >
                 {s}
               </motion.div>
@@ -293,11 +292,10 @@ const Checkout = () => {
                           key={method.id}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setFormData({ ...formData, paymentMethod: method.id })}
-                          className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                            formData.paymentMethod === method.id
-                              ? "border-primary bg-primary/5"
-                              : "border-border hover:border-primary/50"
-                          }`}
+                          className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${formData.paymentMethod === method.id
+                            ? "border-primary bg-primary/5"
+                            : "border-border hover:border-primary/50"
+                            }`}
                         >
                           <div className="flex items-center gap-3">
                             <method.icon className="w-5 h-5 text-primary" />

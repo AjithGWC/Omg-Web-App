@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowLeft, 
+import {
+  ArrowLeft,
   Calendar,
   Bell,
   Sun,
@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -110,7 +110,7 @@ const PersonalizedPooja = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <img src={omSymbol} alt="OM" className="h-8 w-8" />
+              <img src={omSymbol} alt="OM" className="h-10 w-10" />
               <h1 className="text-xl font-bold text-gradient-divine">Pooja Calendar</h1>
             </div>
             <div className="flex items-center gap-2">
@@ -136,13 +136,12 @@ const PersonalizedPooja = () => {
                   key={index}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedDay(index)}
-                  className={`flex flex-col items-center p-2 rounded-xl transition-colors ${
-                    isSelected
-                      ? "bg-gradient-to-br from-primary to-secondary text-primary-foreground"
-                      : isToday
+                  className={`flex flex-col items-center p-2 rounded-xl transition-colors ${isSelected
+                    ? "bg-gradient-to-br from-primary to-secondary text-primary-foreground"
+                    : isToday
                       ? "bg-muted"
                       : ""
-                  }`}
+                    }`}
                 >
                   <span className="text-xs font-medium opacity-70">{weekDays[index]}</span>
                   <span className="text-lg font-bold">{date.getDate()}</span>
@@ -173,11 +172,10 @@ const PersonalizedPooja = () => {
               >
                 <Card className={`p-4 ${pooja.completed ? "opacity-60" : ""}`}>
                   <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${
-                      pooja.completed 
-                        ? "bg-muted" 
-                        : "bg-gradient-to-br from-primary/20 to-secondary/20"
-                    }`}>
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${pooja.completed
+                      ? "bg-muted"
+                      : "bg-gradient-to-br from-primary/20 to-secondary/20"
+                      }`}>
                       {pooja.icon}
                     </div>
                     <div className="flex-1 min-w-0">

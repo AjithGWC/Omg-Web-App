@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowLeft, 
-  Search, 
+import {
+  ArrowLeft,
+  Search,
   Filter,
   MapPin,
   List,
@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { TempleCard } from "@/components/temples/TempleCard";
 import { MapPlaceholder } from "@/components/temples/MapPlaceholder";
 import { temples, Temple } from "@/data/temples";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 import { toast } from "@/hooks/use-toast";
 
 const TempleLocator = () => {
@@ -25,14 +25,14 @@ const TempleLocator = () => {
   const [filterStatus, setFilterStatus] = useState<string>("all");
 
   const filteredTemples = temples.filter((temple) => {
-    const matchesSearch = 
+    const matchesSearch =
       temple.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       temple.deity.toLowerCase().includes(searchQuery.toLowerCase()) ||
       temple.address.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesFilter = 
+
+    const matchesFilter =
       filterStatus === "all" || temple.darshanStatus === filterStatus;
-    
+
     return matchesSearch && matchesFilter;
   });
 
@@ -62,7 +62,7 @@ const TempleLocator = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <img src={omSymbol} alt="OM" className="h-8 w-8" />
+              <img src={omSymbol} alt="OM" className="h-10 w-10" />
               <h1 className="text-xl font-bold text-gradient-divine">Temple Locator</h1>
             </div>
             <div className="flex items-center gap-2">
@@ -117,11 +117,10 @@ const TempleLocator = () => {
                   variant={filterStatus === filter.id ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilterStatus(filter.id)}
-                  className={`shrink-0 ${
-                    filterStatus === filter.id
-                      ? "bg-gradient-to-r from-primary to-secondary border-0"
-                      : ""
-                  }`}
+                  className={`shrink-0 ${filterStatus === filter.id
+                    ? "bg-gradient-to-r from-primary to-secondary border-0"
+                    : ""
+                    }`}
                 >
                   <span className="mr-1">{filter.icon}</span>
                   {filter.label}
@@ -170,7 +169,7 @@ const TempleLocator = () => {
                 Near Me
               </Button>
             </div>
-            
+
             {filteredTemples.length === 0 ? (
               <div className="text-center py-16">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">

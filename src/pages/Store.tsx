@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  Search, 
-  ShoppingCart, 
-  ArrowLeft, 
+import {
+  Search,
+  ShoppingCart,
+  ArrowLeft,
   SlidersHorizontal,
-  Sparkles 
+  Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,7 @@ import { ProductCard } from "@/components/store/ProductCard";
 import { CartDrawer } from "@/components/store/CartDrawer";
 import { useCart } from "@/contexts/CartContext";
 import { products, categories } from "@/data/products";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const Store = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -40,7 +40,7 @@ const Store = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <img src={omSymbol} alt="OM" className="h-8 w-8" />
+              <img src={omSymbol} alt="OM" className="h-10 w-10" />
               <h1 className="text-xl font-bold text-gradient-divine">Divine Store</h1>
             </div>
             <Button
@@ -117,11 +117,10 @@ const Store = () => {
                   variant={selectedCategory === category.id ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`shrink-0 ${
-                    selectedCategory === category.id
-                      ? "bg-gradient-to-r from-primary to-secondary border-0"
-                      : ""
-                  }`}
+                  className={`shrink-0 ${selectedCategory === category.id
+                    ? "bg-gradient-to-r from-primary to-secondary border-0"
+                    : ""
+                    }`}
                 >
                   <span className="mr-1">{category.icon}</span>
                   {category.name}
@@ -140,7 +139,7 @@ const Store = () => {
               {filteredProducts.length} products found
             </p>
           </div>
-          
+
           {filteredProducts.length === 0 ? (
             <div className="text-center py-16">
               <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">

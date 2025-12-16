@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowLeft, 
-  Play, 
-  Pause, 
-  SkipBack, 
+import {
+  ArrowLeft,
+  Play,
+  Pause,
+  SkipBack,
   SkipForward,
   Heart,
   Shuffle,
@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const deities = [
   { id: "shiva", name: "Lord Shiva", icon: "🔱", color: "from-blue-500 to-purple-600" },
@@ -111,7 +111,7 @@ const DivineMusic = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </Link>
-              <img src={omSymbol} alt="OM" className="h-8 w-8" />
+              <img src={omSymbol} alt="OM" className="h-10 w-10" />
               <h1 className="text-xl font-bold text-gradient-divine">Divine Music</h1>
             </div>
             <Button variant="ghost" size="icon">
@@ -140,11 +140,10 @@ const DivineMusic = () => {
                 key={deity.id}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedDeity(selectedDeity === deity.id ? null : deity.id)}
-                className={`p-4 rounded-2xl text-center transition-all ${
-                  selectedDeity === deity.id
-                    ? `bg-gradient-to-br ${deity.color} text-white shadow-lg`
-                    : "bg-muted/50 hover:bg-muted"
-                }`}
+                className={`p-4 rounded-2xl text-center transition-all ${selectedDeity === deity.id
+                  ? `bg-gradient-to-br ${deity.color} text-white shadow-lg`
+                  : "bg-muted/50 hover:bg-muted"
+                  }`}
               >
                 <span className="text-3xl block mb-2">{deity.icon}</span>
                 <span className="text-xs font-medium">{deity.name.split(" ")[1]}</span>
@@ -210,9 +209,8 @@ const DivineMusic = () => {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Card
-                    className={`p-3 cursor-pointer transition-all ${
-                      isCurrentTrack ? "border-primary bg-primary/5" : "hover:bg-muted/50"
-                    }`}
+                    className={`p-3 cursor-pointer transition-all ${isCurrentTrack ? "border-primary bg-primary/5" : "hover:bg-muted/50"
+                      }`}
                     onClick={() => {
                       setCurrentTrack(track);
                       setIsPlaying(true);

@@ -24,7 +24,7 @@ import {
   Smartphone
 } from "lucide-react";
 import heroImage from "@/assets/hero-ganesha.jpg";
-import omSymbol from "@/assets/om-symbol.png";
+import omSymbol from "@/assets/OMG-Logo.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -210,7 +210,7 @@ const Index = () => {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-3"
             >
-              <img src={omSymbol} alt="OM" className="h-10 w-10 animate-pulse-soft" />
+              <img src={omSymbol} alt="OM" className="h-12 w-12 animate-pulse-soft" />
               <span className="text-2xl font-bold text-gradient-divine">OMG</span>
             </motion.div>
 
@@ -826,7 +826,7 @@ const Index = () => {
                 <motion.img
                   src={omSymbol}
                   alt="Om"
-                  className="w-20 h-20 mx-auto"
+                  className="w-24 h-24 mx-auto"
                   animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
                   transition={{ duration: 4, repeat: Infinity }}
                 />
@@ -888,7 +888,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
-                <img src={omSymbol} alt="OM" className="h-10 w-10" />
+                <img src={omSymbol} alt="OM" className="h-12 w-12" />
                 <span className="text-2xl font-bold text-gradient-divine">OMG</span>
               </div>
               <p className="text-muted-foreground max-w-sm">
